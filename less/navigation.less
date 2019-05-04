@@ -8,7 +8,7 @@ nav {
   a{
     
     padding: 5px 5px 0px 5px;
-    font-family: @font-nav-and-h1; 
+    font-family: font-nav-and-h1(); 
     font-size: 15px; 
     text-decoration: none;
     transition: all .7s ease-in-out;
@@ -19,17 +19,31 @@ nav {
   & :hover{
       
       background-color: black;
-      color: yellowgreen;
-      border: 3px groove yellow;
+      color: gold;
+      padding: 5px 5px 5px 5px;
       transform: translatey(30px); 
 }
+
 }
+
+nav a:nth-last-child(1){
+    border-radius: 60%;
+    transition: all .7s ease-in-out;
+    
+    &:hover{
+        font-size: 17px;
+        color: aqua;
+        
+    }
+}
+
 h1{
     text-align: center;
-    font-family: @font-nav-and-h1;
+    font-family: font-nav-and-h1();
     font-size: 35px;
     font-weight: bold;
     padding: 5px 5px 10px 5px;
 }
+
 
 

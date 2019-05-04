@@ -1,3 +1,15 @@
+.font-nav-and-h1 {
+  font-family: 'Kenia', cursive;
+}
+.button {
+  width: 100%;
+  height: 10vh;
+  color: white;
+  background-color: darkgreen;
+  border-radius: 5%;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -166,7 +178,7 @@ nav {
 }
 nav a {
   padding: 5px 5px 0px 5px;
-  font-family: 'Kenia', cursive;
+  font-family: font-nav-and-h1();
   font-size: 15px;
   text-decoration: none;
   transition: all 0.7s ease-in-out;
@@ -175,13 +187,21 @@ nav a {
 }
 nav :hover {
   background-color: black;
-  color: yellowgreen;
-  border: 3px groove yellow;
+  color: gold;
+  padding: 5px 5px 5px 5px;
   transform: translatey(30px);
+}
+nav a:nth-last-child(1) {
+  border-radius: 60%;
+  transition: all 0.7s ease-in-out;
+}
+nav a:nth-last-child(1):hover {
+  font-size: 17px;
+  color: aqua;
 }
 h1 {
   text-align: center;
-  font-family: 'Kenia', cursive;
+  font-family: font-nav-and-h1();
   font-size: 35px;
   font-weight: bold;
   padding: 5px 5px 10px 5px;
@@ -201,7 +221,7 @@ footer {
   margin: 0px;
   width: 100%;
   padding: 10px 10px 10px 10px;
-  grid-template-rows: repeat(3, auto);
+  /*  grid-template-rows: repeat(3,auto); */
   grid-gap: 5px;
   border-radius: 20px;
 }
@@ -247,33 +267,47 @@ footer {
 .home .walk .walk-text p {
   margin-bottom: 26px;
 }
-.home .walk .walk-text .btn {
-  height: 70px;
-  width: 130px;
-  color: white;
-  background-color: darkgreen;
-  border-radius: 30%;
-  transition: all 0.5s ease-in;
-}
-.home .walk .walk-text .btn :hover {
-  transform: scalex(30px);
-  background-color: lightgreen;
-}
 .home .walk .walk-img {
   width: 46%;
   margin-left: 4%;
+  max-width: 100%;
 }
 .home .walk .walk-img img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
+.home .btn {
+  width: 100%;
+  height: 10vh;
+  color: white;
+  background-color: darkgreen;
+  border-radius: 5%;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  animation-name: spin;
+  animation-duration: 8s;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 500px) {
+  .walk-img {
+    width: 100%;
+  }
+  .walk-img #walk-img {
+    width: 100%;
+  }
   .space-images #launch-img {
     max-width: 500px;
-    max-height: 500px;
+    /*max-height: 500px; */
     width: 100%;
-    height: 100%;
+    /*height: 100%; */
     margin: 10px;
     padding: 0;
   }
@@ -285,6 +319,7 @@ footer {
   }
   .walk-text {
     width: 100%;
+    min-width: 100%;
   }
   .walk-text h3 {
     margin-bottom: 10px;
@@ -292,16 +327,25 @@ footer {
   .walk-text p {
     margin-bottom: 0px;
   }
-  .walk-text button .btn {
+  .cloned #clone {
     width: 100%;
-    height: 100%;
+    border-radius: 5%;
+    border-top: 0.5px solid grey;
+    padding: 10px 10px 10px 10px;
+  }
+  .btn {
+    width: 100%;
+    height: 10vh;
     color: white;
-    height: 100px;
+    background-color: darkgreen;
+    border-radius: 5%;
     transition: all 0.5s ease-in;
     cursor: pointer;
+    animation-name: spin;
   }
-  .walk-text button .btn .btn:hover {
-    transform: translateX(20PX);
-    color: lightgreen;
+}
+@media (min-width: 500px) {
+  #clone {
+    display: none;
   }
 }
