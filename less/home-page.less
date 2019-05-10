@@ -57,9 +57,19 @@
     padding: 50px 60px;
     display: flex;
     justify-content: center;
+    
+    @media @mobile {
+      flex-direction: column-reverse;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
 
     .walk-text {
       width: 50%;
+      @media @mobile {
+        width: 100%;
+        padding-top: 20px;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -75,21 +85,49 @@
     .walk-img {
       width: 46%;
       margin-left: 4%;
-      max-width: 100%;
+      //max-width: 100%;
+
+      @media @mobile {
+        width: 100%;
+        margin: 0 auto;
+      }
+
       
       img {
-       width: 100%;
+
+        width: 100%;
         height: auto;
         border-radius: 10px;
       }
     }
     
+    
   }
    // added mixins to my button
   .btn{
-    .button();
+    .button(100%, 10vh, @btn-bg-color, @wild-sand, 2rem);
+    
     animation-name: spin;
     animation-duration: 8s;
+    
+
+     @media @mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .button(100%, 10vh, @btn-bg-color, @wild-sand, 2rem);
+      
+      
+    }
+  }
+
+  @media @mobile {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
 
   }
   // added animation
@@ -98,24 +136,15 @@
     to{transform: rotate(360deg);}
 }
   
-}// home
+// home
 
 
 // media queries start here
 @media @mobile{
   
-  .walk-img {
-     
-   width: 100%;
-    
-    
-   #walk-img{
-     width: 100%;
-   }
-  }
     
   .space-images #launch-img{
-    max-width: 500px;
+    //max-width: 500px;
     /*max-height: 500px; */
     width: 100%;
     /*height: 100%; */
@@ -134,8 +163,9 @@
   }
   .walk-text{
     width: 100%;
+
     
-    min-width: 100%;
+   // min-width: 100%;
     
    
 
@@ -150,24 +180,14 @@
 
     
   }
-  .cloned #clone{
+  
+  
+  .walk-img img{
     width: 100%;
-    border-radius: 5%;
-    border-top: .5px solid grey;
-    padding: 10px 10px 10px 10px;
-  }
-  .btn {
-      
-    .button();
-    animation-name: spin;
-      
-    }
-    
+   min-width: 100%;
+  
+   }
+  
+  } 
 
-}
-// added another media query to get rid of my second image
-@media @desktop{
-  #clone{
-    display: none;
-  }
-}
+
