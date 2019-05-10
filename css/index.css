@@ -194,6 +194,9 @@ h1 {
   font-weight: bold;
   padding: 5px 5px 10px 5px;
 }
+.main-header {
+  background: #F6F6F6;
+}
 footer {
   color: #22283B;
   background: #f4f4f4;
